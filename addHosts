@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# Directory where our scripts, keys and hosts are (Received from mount script)
+dir="$1"
+
+# Text that gets inserted into .ssh/config to include our user configs
+include="Include ~/.ssh/hosts/*"
+
+hosts=$dir/hosts
+
+if [ -f $hosts ]; then
+    echo "Hosts directory not found"
+    exit 0
+fi
+
+# Make .ssh folder if it doesn't exist
+if [ ! -d ~/.ssh/hosts ]; then
+    mkdir -p ~/.ssh/hosts
+fi
+
+echo "Copying hosts to local machine"
+find $hosts -type f -execdir cp "{}" ~/.ssh/hosts ";"
+sudo chown $USER:$USER -R ~/.ssh/hosts # Update owner
+sudo chmod 700 -R ~/.ssh/hosts         # Update permissions
+
+if [ -f ~/.ssh/config ]; then
+    # Update existing config to include our user configs
+    if ! grep -Fxq "$include" ~/.ssh/config; then
+        echo "Updating .ssh/config"
+        echo $include >> ~/.ssh/config
+    fi
+else
+    # Create a new ssh config
+    echo "Creating .ssh/config"
+    echo $include > ~/.ssh/config
+    chmod 600 -R ~/.ssh/config
+fi
