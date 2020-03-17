@@ -14,6 +14,6 @@ It keeps keys stored on the USB drive and never transfers them to the local mach
  
  3) Create a new host file in the hosts directory, These host files are included into your main ```.ssh/config```. Check out the example host to get started quick.
  
- 4) Run mount.bat. This will mount the USB drive to the folder you specified in step 1, copy the contents of ```hosts``` to ```~/.ssh/hosts``` and insert an ```Input``` declaration in ~/.ssh/config to include them in the main config.
+ 4) Run ```mount.bat```. This will mount the USB drive to the folder you specified in step 1, copy the contents of ```hosts``` to ```~/.ssh/hosts``` and insert an ```Input``` declaration in ```~/.ssh/config``` to include them in the main config.
  
  5) ```ssh \<nameofhost\>```
