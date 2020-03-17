@@ -5,7 +5,7 @@ Quickly mount a usb drive and make your SSH host aliases available in WSL
 First time creating a public repository so the readme is probably going to be a little sparse. I built this for myself but I figured I'd make the repo public since it's quite useful and I searched quite a bit for something to do this but had not luck and deciding to do it myself.
 
 I was looking for a way to carry around an address book of sorts for my ssh servers but found nothing and ended up making my own.
-It keeps keys stored on the USB drive and never transfers them to the local machine. It does however, transfer the host configs for the moment and I'll likely update it soon to include them directly but it's not a huge issue at the moment.
+It keeps keys stored on the USB drive and never transfers them to the local machine. It does however, transfer the host configs; I couldn't find a reliable away around this. With the way WSL mounts fat32, ssh doesn't have the permissions necessary to load the configs from the mounted partition.
 
 # getting started
  1) Edit the mount point in ```mount.bat```
