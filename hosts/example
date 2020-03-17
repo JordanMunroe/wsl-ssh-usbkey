@@ -2,4 +2,4 @@ Host exampleHost
 	HostName 127.0.0.1
 	Port 22
 	User bojan
-	IdentityFile /mnt/bobokey/ssh/keys/jordanmunroe
+	IdentityFile /mnt/bobokey/ssh/keys/mykey
