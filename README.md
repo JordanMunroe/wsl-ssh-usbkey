@@ -13,7 +13,7 @@ I was looking for a way to carry around an address book of sorts for my ssh serv
  
  2) Generate your keys and put them somewhere on the drive
  
- 3) Create a new host file in the hosts directory, These host files are included into your main ```.ssh/config```. Check out the example host to get started quick.
+ 3) Create a new host file in the hosts directory, These host files are included into your main ```.ssh/config```. Check out the ```hosts/hosts``` example file to get started quick. You may have as many host files as you like.
  
  4) Run ```mount.bat```. This will mount the USB drive to the folder you specified in step 1, copy the contents of ```hosts``` to ```~/.ssh/hosts``` and insert an ```Input``` declaration in ```~/.ssh/config``` to include them in the main config.
  
