@@ -23,7 +23,7 @@ set dir=%dir:\=/%
 
 :: Tell wsl to mount the drive and then execute the addHosts shell script
 echo Mounting usb in WSL
-wsl -- sudo mkdir -p %mountPoint% ; sudo mount -t drvfs %driveLetter%: '%mountPoint%' ; %dir%/addHosts %dir%
+wsl sudo mkdir -p %mountPoint% ; sudo mount -t drvfs %driveLetter%: '%mountPoint%' ; %dir%/addHosts %dir%
 
 echo Done!
 @pause
